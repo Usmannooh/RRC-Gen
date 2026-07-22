@@ -13,4 +13,4 @@ python main.py \
 --save_dir results/mimic_cxr \
 --record_dir ./records \
 --lr_ve 5e-5 \
---seed 2041
+--seed 9233
