@@ -1,37 +1,5 @@
 
 
-"""
-visual_extractor_ablation.py
-============================
-Ablation-ready Visual Feature Extractor.
-
-Each component can be turned ON or OFF via argparse flags:
-  --use_se    True/False   (SE Channel Recalibration)
-  --use_ecsa  True/False   (ECSA Spatial Attention)
-
-Usage examples:
-  Full Sman (default):
-    --use_se True --use_ecsa True
-
-  Without SE only:
-    --use_se False --use_ecsa True
-
-  Without ECSA only:
-    --use_se True --use_ecsa False
-
-  Without both (plain ResNet-101 = R2Gen baseline):
-    --use_se False --use_ecsa False
-
-RCCL is controlled separately in mcct.py via:
-  --rccl_weight 0.0    → RCCL OFF (pure CE loss)
-  --rccl_weight 0.01   → RCCL ON  (default)
-
-Temperature ablation in mcct.py:
-  --rccl_temp 0.5   (sharp distribution)
-  --rccl_temp 1.0   (default)
-  --rccl_temp 2.0   (soft distribution)
-"""
-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -44,8 +12,8 @@ class RVFE(nn.Module):
         super().__init__()
 
         # ── Component switches (read from args) ──────────────────────────────
-        self.use_se   = getattr(args, 'use_se',   True)   # SE ON by default
-        self.use_ecsa = getattr(args, 'use_ecsa', True)   # ECSA ON by default
+        self.use_se   = getattr(args, 'use_se',   True)   
+        self.use_ecsa = getattr(args, 'use_ecsa', True)   
 
         self.target_feat_dim = args.d_vf
         self.native_feat_dim = 2048
