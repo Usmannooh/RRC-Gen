@@ -13,4 +13,4 @@ python main.py \
 --save_dir results/iu_xray \
 --record_dir ./records \
 --lr_ve 0.002 \
---seed 2041
+--seed 9233
