@@ -1,1 +1,312 @@
+# RRC-Gen: Recalibrated Visual Feature Extraction and Relational Contrastive Learning for Automated Radiology Report Generation
 
+RRC-Gen is a lightweight framework for **Automated Radiology Report Generation (ARRG)** from chest X-ray images. The proposed method is designed to improve both **visual representation learning** and **cross-modal semantic alignment**, enabling more accurate and clinically meaningful report generation while maintaining the efficient **BaseCMN** architecture.
+
+Despite recent advances in vision-language models, existing radiology report generation methods still suffer from several fundamental limitations:
+
+1. **Insufficient visual representation learning**, making subtle pathological findings difficult to recognize.
+2. **Weak cross-modal semantic alignment**, resulting in incomplete correspondence between medical images and generated reports.
+3. **Limited discrimination of rare abnormalities**, leading to reduced clinical reliability for underrepresented disease categories.
+
+To address these challenges, **RRC-Gen** introduces two complementary components:
+
+- **Recalibrated Visual Feature Extraction (RVFE)** to enhance disease-relevant visual representations through spatial and channel-aware feature recalibration.
+- **Relational Contrastive Clustering Learning (RCCL)** to improve semantic consistency by learning relational structures among visual representations using contrastive learning.
+
+Together, these modules significantly improve feature representation quality, multimodal semantic consistency, and overall radiology report generation performance.
+
+---
+
+# 📢 Important Notice
+
+This repository contains the **official PyTorch implementation** of our manuscript:
+
+> **RRC-Gen: Recalibrated Visual Feature Extraction and Relational Contrastive Learning for Automated Radiology Report Generation**
+
+If you use this repository in your research, **please cite our paper** (see Citation section below).
+
+This repository provides:
+
+- Complete PyTorch implementation
+- Reproducible training pipeline
+- Evaluation scripts
+- IU X-Ray and MIMIC-CXR support
+- Preprocessing and inference pipeline
+
+---
+
+# ✨ Key Features
+
+Compared with conventional radiology report generation methods, **RRC-Gen** improves both visual understanding and semantic representation while maintaining a lightweight architecture.
+
+| Module | Purpose |
+|---------|---------|
+| **RVFE** | Enhances disease-relevant visual representations using spatial and channel-aware feature recalibration |
+| **RCCL** | Learns relational contrastive representations to strengthen semantic consistency and rare abnormality discrimination |
+| **BaseCMN Decoder** | Generates radiology reports from enhanced visual representations |
+| **Joint Optimization** | Optimizes report generation and relational contrastive learning simultaneously |
+
+The proposed framework improves:
+
+- Better visual feature representation
+- Stronger multimodal semantic alignment
+- Improved rare abnormality recognition
+- More accurate radiology report generation
+- Lightweight and computationally efficient design
+
+---
+
+# 🏗 Framework Overview
+
+### Simplified Algorithm
+
+```python
+# Input:
+# Chest X-ray image(s)
+
+# Output:
+# Radiology Report
+
+# Step 1: Visual Feature Extraction
+F = ResNet101(Image)
+
+# Step 2: Recalibrated Visual Feature Extraction (RVFE)
+F_refined = RVFE(F)
+
+# Step 3: Relational Contrastive Clustering Learning (RCCL)
+Z = ProjectionHead(F_refined)
+loss_rccl = RCCL(Z)
+
+# Step 4: Cross Memory Encoding
+Memory = BaseCMNEncoder(F_refined)
+
+# Step 5: Transformer Decoder
+Report = BaseCMNDecoder(Memory)
+
+# Final Optimization
+Loss = CaptionLoss + λ × RCCL
+```
+
+---
+
+# ⚙️ Requirements
+
+The code has been tested using:
+
+- Python ≥ 3.8
+- PyTorch ≥ 1.10
+- CUDA ≥ 11.3
+
+Required packages:
+
+```
+torch
+torchvision
+numpy
+scipy
+transformers
+opencv-python
+matplotlib
+scikit-learn
+pandas
+tqdm
+```
+
+Install all dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 📂 Dataset
+
+Please download the following public datasets:
+
+- **IU X-Ray**
+- **MIMIC-CXR**
+
+After downloading, organize the datasets as follows:
+
+```
+RRC-Gen/
+│
+├── config/
+├── data/
+│   ├── iu_xray/
+│   └── mimic_cxr/
+│
+├── models/
+├── modules/
+│   ├── dataloader/
+│   ├── losses/
+│   ├── metrics/
+│   ├── tokenizer/
+│   ├── utils/
+│   └── visual_extractor/
+│
+├── pycocoevalcap/
+│
+├── train_iu_xray.sh
+├── train_mimic_cxr.sh
+├── test_iu_xray.sh
+├── test_mimic_cxr.sh
+│
+├── main_train.py
+├── main_test.py
+│
+└── README.md
+```
+
+---
+
+# 🚀 Training
+
+### IU X-Ray
+
+```bash
+bash train_iu_xray.sh
+```
+
+### MIMIC-CXR
+
+```bash
+bash train_mimic_cxr.sh
+```
+
+---
+
+# 🧪 Testing
+
+### IU X-Ray
+
+```bash
+bash test_iu_xray.sh
+```
+
+### MIMIC-CXR
+
+```bash
+bash test_mimic_cxr.sh
+```
+
+---
+
+# 📊 Experimental Results
+
+## IU X-Ray
+
+| BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | METEOR | ROUGE-L | CIDEr |
+|--------|--------|--------|--------|---------|----------|--------|
+| Coming Soon | Coming Soon | Coming Soon | Coming Soon | Coming Soon | Coming Soon | Coming Soon |
+
+---
+
+## MIMIC-CXR
+
+| BLEU-1 | BLEU-2 | BLEU-3 | BLEU-4 | METEOR | ROUGE-L | CIDEr |
+|--------|--------|--------|--------|---------|----------|--------|
+| Coming Soon | Coming Soon | Coming Soon | Coming Soon | Coming Soon | Coming Soon | Coming Soon |
+
+Detailed comparisons with existing state-of-the-art methods are available in the manuscript.
+
+---
+
+# 📈 Evaluation Metrics
+
+The following standard evaluation metrics are adopted:
+
+- BLEU-1
+- BLEU-2
+- BLEU-3
+- BLEU-4
+- METEOR
+- ROUGE-L
+- CIDEr
+
+---
+
+# ⚙ Configuration
+
+Configuration files allow customization of:
+
+- Dataset paths
+- Batch size
+- Learning rate
+- Number of epochs
+- Beam size
+- Optimizer settings
+- Model checkpoints
+- GPU selection
+
+---
+
+# 📁 Repository Structure
+
+```
+RRC-Gen
+│
+├── config/
+├── data/
+├── models/
+├── modules/
+├── pycocoevalcap/
+├── train_iu_xray.sh
+├── train_mimic_cxr.sh
+├── test_iu_xray.sh
+├── test_mimic_cxr.sh
+├── main_train.py
+├── main_test.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🙏 Acknowledgments
+
+This work is supported by the **Natural Science Foundation of China (Grant No. 62072070).**
+
+We sincerely thank the authors of the following excellent open-source projects:
+
+- R2Gen
+- BaseCMN
+- PyTorch
+- IU X-Ray Dataset
+- MIMIC-CXR Dataset
+
+Their contributions greatly facilitated this research.
+
+---
+
+# 📖 Citation
+
+If you find this repository useful, please cite our work.
+
+```bibtex
+@article{usman2026rrcgen,
+  title={RRC-Gen: Recalibrated Visual Feature Extraction and Relational Contrastive Learning for Automated Radiology Report Generation},
+  author={Usman, M. and [Co-authors]},
+  journal={Multimedia Systems},
+  year={2026},
+  note={Under Review},
+  url={https://github.com/Usmannooh/RRC-Gen}
+}
+```
+
+---
+
+# ⭐ Star the Repository
+
+If you find this work helpful, please consider giving the repository a ⭐.
+
+Your support helps improve the visibility and reproducibility of medical AI research.
+
+---
+
+## Contact
+
+For questions, suggestions, or collaborations, please open an **Issue** or **Pull Request**.
+
+Thank you for your interest in **RRC-Gen**.
