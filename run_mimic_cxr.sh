@@ -1,0 +1,16 @@
+python main.py \
+--image_dir data/mimic_cxr/images/ \
+--ann_path data/mimic_cxr/annotation.json \
+--vocab-path data/vocabmimic.pkl \
+--dataset_name mimic_cxr \
+--m2decoder_max_seq_length 100 \
+--m2_decoder_weight 0.05 \
+--max_seq_length 80 \
+--batch_size 26 \
+--epochs 100 \
+--early_stop 50 \
+--log_period 5000 \
+--save_dir results/mimic_cxr \
+--record_dir ./records \
+--lr_ve 5e-5 \
+--seed 2041

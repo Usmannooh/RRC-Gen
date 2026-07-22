@@ -1,0 +1,16 @@
+python main.py \
+--image_dir data/iu_xray/images/ \
+--ann_path data/iu_xray/annotation.json \
+--vocab-path data/New_vocab.pkl \
+--dataset_name iu_xray \
+--m2decoder_max_seq_length 60 \
+--m2_decoder_weight 5e-5 \
+--max_seq_length 50 \
+--batch_size 8 \
+--epochs 200 \
+--early_stop 50 \
+--log_period 200 \
+--save_dir results/iu_xray \
+--record_dir ./records \
+--lr_ve 0.002 \
+--seed 2041
