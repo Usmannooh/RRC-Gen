@@ -42,17 +42,16 @@ def parse_agrs():
     parser.add_argument('--embedding_path', type=str,default='./data/embedding/embeddings.txt')
     parser.add_argument('--save_dir',   type=str, default='./records_iu')
     parser.add_argument('--record_dir', type=str, default='./records_iu')
-    #parser.add_argument('--record_dir', type=str, default='./records_iu/ablation/4.base+se+rccl+escaON')#hyperameterAnalysisTemp/1.0
 
     parser.add_argument('--dataset_name', type=str, default='iu_xray',choices=['iu_xray', 'mimic_cxr'])
     parser.add_argument('--threshold',   type=int,  default=3)
     parser.add_argument('--num_workers', type=int,  default=0)
     parser.add_argument('--batch_size',  type=int,  default=8)
-    parser.add_argument('--max_seq_length',          type=int,   default=50)
+    parser.add_argument('--max_seq_length',          type=int,   default=60)
     parser.add_argument('--visual_extractor',            type=str,  default='resnet101')
     parser.add_argument('--visual_extractor_pretrained', type=bool, default=True)
     # Ablation
-    parser.add_argument('--rccl_weight_iu', type=float, default=1.0, help='Weight for RCCL loss.') #1.0
+    parser.add_argument('--rccl_weight_iu', type=float, default=1.0, help='Weight for RCCL loss.') 
     parser.add_argument('--rccl_weight_mi', type=float, default=0.01, help='Weight for RCCL loss.')
     parser.add_argument('--use_se', type=bool, default=True,help='Enable SE channel recalibration.' )
     parser.add_argument('--use_ecsa', type=bool,default=True, help='Enable ECSA spatial attention.')
@@ -113,7 +112,7 @@ def parse_agrs():
     parser.add_argument('--step_size',    type=int,   default=20)
     parser.add_argument('--gamma',        type=float, default=0.5)
 
-    parser.add_argument('--seed',   type=int, default=23) #23
+    parser.add_argument('--seed',   type=int, default=9233) 
     parser.add_argument('--resume', type=str, default=None)
 
     return parser.parse_args()
