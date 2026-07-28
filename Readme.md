@@ -197,7 +197,7 @@ The following metrics are used:
 * METEOR
 * ROUGE-L
 * CIDEr
-* [Captions](https://github.com/tylin/coco-caption)
+* [Pycocoevalcap_Captions](https://github.com/tylin/coco-caption)
   
 # Results
 | Model    | BLEU-4    | METEOR    | ROUGE-L   | CIDEr     |
