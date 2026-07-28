@@ -229,20 +229,6 @@ If you find this repository useful, please cite:
 }
 ```
 
----
-
-# Acknowledgments
-
-We thank the authors of the following open-source projects:
-
-* R2Gen
-* BaseCMN
-* PyTorch
-* IU X-Ray Dataset
-* MIMIC-CXR Dataset
-
----
-
 # Contact
 
 For questions, suggestions, or collaborations, please open an Issue or Pull Request.
