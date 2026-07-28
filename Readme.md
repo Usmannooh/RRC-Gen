@@ -184,20 +184,6 @@ bash train_mimic_cxr.sh
 
 ---
 
-# Testing
-
-## IU X-Ray
-
-```bash
-bash test_iu_xray.sh
-```
-
-## MIMIC-CXR
-
-```bash
-bash test_mimic_cxr.sh
-```
-
 
 
 # Evaluation Metrics
