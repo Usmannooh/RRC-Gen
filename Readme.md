@@ -197,6 +197,7 @@ The following metrics are used:
 * METEOR
 * ROUGE-L
 * CIDEr
+* [Captions]([https://physionet.org/content/mimic-cxr-jpg/2.0.0/](https://github.com/tylin/coco-caption))
   
 # Results
 | Model    | BLEU-4    | METEOR    | ROUGE-L   | CIDEr     |
