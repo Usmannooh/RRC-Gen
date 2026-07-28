@@ -1,12 +1,12 @@
 # RRC-Gen: Recalibrated Visual Feature Extraction and Relational Contrastive Learning for Automated Radiology Report Generation
 
-RRC-Gen is a lightweight framework for **Automated Radiology Report Generation (ARRG)** from chest X-ray images. The proposed method improves visual representation learning and cross-modal semantic alignment while maintaining the efficient **BaseCMN** architecture.
+RRC-Gen is a lightweight framework for **Automated Radiology Report Generation (ARRG)** from chest X-ray images. The proposed method improves visual representation learning and cross-modal semantic alignment.
 
 ## Overview
 
 Despite recent advances in vision-language models, existing radiology report generation approaches still face several challenges:
 
-1. **Insufficient visual representation learning**, making subtle pathological findings difficult to recognize.
+1. **Insufficient visual representation learning**, making subtle pathological rare findings difficult to recognize.
 2. **Weak cross-modal semantic alignment**, limiting accurate image-report correspondence.
 3. **Limited recognition of rare abnormalities**, reducing clinical reliability.
 
@@ -25,7 +25,7 @@ Together, these modules improve visual feature quality, multimodal alignment, an
 
 <p align="center">
 
-<img width="1081" height="677" alt="RRC-Gen" src="https://github.com/user-attachments/assets/596a7189-53b6-454e-a7ec-307755e68cbf" />
+<img " />
 </p>
 # Important Notice
 
@@ -128,12 +128,13 @@ pip install -r requirements.txt
 
 ---
 
-# Dataset
+##  Dataset
 
-Supported datasets:
+Download the following datasets and place them under the `data/` directory:
 
-* IU X-Ray
-* MIMIC-CXR
+* [IU X-Ray Dataset](https://iuhealth.org/find-medical-services/x-rays)
+* [MIMIC-CXR Dataset](https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
+
 
 Dataset structure:
 
@@ -210,8 +211,23 @@ The following metrics are used:
 * METEOR
 * ROUGE-L
 * CIDEr
+  
+# Results
+| Model    | BLEU-4    | METEOR    | ROUGE-L   | CIDEr     |
+| -------- | --------- | --------- | --------- | --------- |
+| **IU-Xray** | **0.193** | **0.225** | **0.369** | **0.405** |
+| **MIMIC** | **0.141** | **0.148** | **0.318** | **0.149** |
 
+(Refer to the paper for full comparison)
 ---
+
+# Acknowledgments
+
+This work is supported by a grant from the **Natural Science Foundation of China (Grant No. 62572089)**.  <br><br>
+
+We would also like to express our gratitude to all the source code contributors, especially the authors of **R2GenCNM**, whose work inspired parts of this implementation.
+
+
 
 # Citation
 
