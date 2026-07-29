@@ -23,11 +23,9 @@ Together, these modules improve visual feature quality, multimodal alignment, an
 ---
 # Framework Overview
 
-<p align="center">
+<img width="1596" height="628" alt="git_RRC_Gen" src="https://github.com/user-attachments/assets/0d89552f-715a-403d-ad50-869bc7b81926" />
 
-<img " />![Uploading git_RRC_Gen.JPG…]()
 
-</p>
 # Important Notice
 
 This repository provides the official PyTorch implementation of:
