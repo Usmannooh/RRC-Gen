@@ -25,7 +25,8 @@ Together, these modules improve visual feature quality, multimodal alignment, an
 
 <p align="center">
 
-<img " />
+<img " />![Uploading git_RRC_Gen.JPG…]()
+
 </p>
 # Important Notice
 
