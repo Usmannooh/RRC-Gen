@@ -4,21 +4,20 @@ RRC-Gen is a lightweight framework for **Automated Radiology Report Generation (
 
 ## Overview
 
-Despite recent advances in vision-language models, existing radiology report generation approaches still face several challenges:
+Despite recent advances in Transformer-based and vision-language approaches, radiology report generation still depends on the quality and organization of visual representations. In particular, existing approaches may face challenges in:
 
-1. **Insufficient visual representation learning**, making subtle pathological rare findings difficult to recognize.
-2. **Weak cross-modal semantic alignment**, limiting accurate image-report correspondence.
-3. **Limited recognition of rare abnormalities**, reducing clinical reliability.
+1. **Insufficiently discriminative visual representations**, making subtle radiographic findings difficult to capture.
+2. **Limited relational organization of visual embeddings**, reducing the ability to exploit similarities among semantically related radiographic samples.
 
 To address these challenges, RRC-Gen introduces two key components:
 
-* **Recalibrated Visual Feature Extraction (RVFE)**
-  Enhances disease-related visual representations through spatial and channel-aware feature recalibration.
+* **Recalibrated Visual Feature Extraction (RVFE)**  
+  Refines informative visual representations through sequential channel recalibration and enhanced channel-guided spatial attention.
 
-* **Relational Contrastive Clustering Learning (RCCL)**
-  Improves semantic consistency by learning relational structures among visual representations through contrastive learning.
+* **Relational Contrastive Clustering Learning (RCCL)**  
+  Dynamically discovers relationally similar visual samples within the embedding space and improves representation discriminability through relational contrastive learning without requiring disease labels.
 
-Together, these modules improve visual feature quality, multimodal alignment, and radiology report generation performance.
+Together, these components enhance visual representation quality and support improved downstream radiology report generation.
 
 ---
 # Framework Overview
@@ -51,7 +50,7 @@ This repository includes:
 | ---------------------- | -------------------------------------------------------------------------------- |
 | **RVFE**               | Enhances disease-related visual features using spatial and channel recalibration |
 | **RCCL**               | Learns relational contrastive representations for stronger semantic consistency  |
-| **Transformer based Decoder**    | Generates radiology reports from enhanced visual representations                 |
+| **Transformer-based Report Generator**    | Generates radiology reports from enhanced visual representations                 |
 
 
 The proposed framework provides:
@@ -92,7 +91,7 @@ Memory = BaseCMNEncoder(F_refined)
 Report = BaseCMNDecoder(Memory)
 
 # Final Objective
-Loss = CaptionLoss + λ × RCCL
+Loss = CaptionLoss + λ × loss_rccl
 ```
 
 ---
