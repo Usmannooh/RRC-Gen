@@ -23,7 +23,8 @@ Together, these modules improve visual feature quality, multimodal alignment, an
 ---
 # Framework Overview
 
-<img width="1596" height="628" alt="git_RRC_Gen" src="https://github.com/user-attachments/assets/0d89552f-715a-403d-ad50-869bc7b81926" />
+<img width="903" height="899" alt="image" src="https://github.com/user-attachments/assets/cc8cabcd-25bf-4e31-89c5-ffca050f40e2" />
+
 
 
 # Important Notice
