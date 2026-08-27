@@ -132,7 +132,7 @@ pip install -r requirements.txt
 
 Download the following datasets and place them under the `data/` directory:
 
-* [IU X-Ray Dataset](https://iuhealth.org/find-medical-services/x-rays)
+* [IU X-Ray Dataset](https://drive.google.com/file/d/1c0BXEuDy8Cmm2jfN0YYGkQxFZd2ZIoLg/view)
 * [MIMIC-CXR Dataset](https://physionet.org/content/mimic-cxr-jpg/2.0.0/)
 
 
