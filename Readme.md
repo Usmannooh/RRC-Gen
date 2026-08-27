@@ -51,8 +51,8 @@ This repository includes:
 | ---------------------- | -------------------------------------------------------------------------------- |
 | **RVFE**               | Enhances disease-related visual features using spatial and channel recalibration |
 | **RCCL**               | Learns relational contrastive representations for stronger semantic consistency  |
-| **BaseCMN Decoder**    | Generates radiology reports from enhanced visual representations                 |
-| **Joint Optimization** | Optimizes report generation and contrastive learning simultaneously              |
+| **Transformer based Decoder**    | Generates radiology reports from enhanced visual representations                 |
+
 
 The proposed framework provides:
 
