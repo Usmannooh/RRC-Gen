@@ -101,9 +101,9 @@ Loss = CaptionLoss + λ × loss_rccl
 
 The code has been tested with:
 
-* Python >= 3.8
-* PyTorch >= 1.10
-* CUDA >= 11.3
+* Python >= 3.9.21
+* PyTorch >= 1.13.1+cu117
+* CUDA >= 11.7
 
 Required packages:
 
