@@ -188,7 +188,7 @@ bash train_mimic_cxr.sh
 
 # Evaluation Metrics
 
-The following metrics are used:
+The following metrics are used:[Pycocoevalcap_Captions](https://github.com/tylin/coco-caption)
 
 * BLEU-1
 * BLEU-2
@@ -197,7 +197,6 @@ The following metrics are used:
 * METEOR
 * ROUGE-L
 * CIDEr
-* [Pycocoevalcap_Captions](https://github.com/tylin/coco-caption)
   
 # Results
 | Model    | BLEU-4    | METEOR    | ROUGE-L   | CIDEr     |
