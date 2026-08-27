@@ -17,12 +17,13 @@ To address these challenges, RRC-Gen introduces two key components:
 * **Relational Contrastive Clustering Learning (RCCL)**  
   Dynamically discovers relationally similar visual samples within the embedding space and improves representation discriminability through relational contrastive learning without requiring disease labels.
 
-Together, these components enhance visual representation quality and support improved downstream radiology report generation.
+Together, these components enhance the quality of visual representations and support improved downstream radiology report generation.
 
 ---
 # Framework Overview
 
-<img width="903" height="899" alt="image" src="https://github.com/user-attachments/assets/cc8cabcd-25bf-4e31-89c5-ffca050f40e2" />
+<img width="864" height="716" alt="image" src="https://github.com/user-attachments/assets/63bf353f-5f5c-471b-838a-146f5f3fd3ea" />
+
 
 
 
